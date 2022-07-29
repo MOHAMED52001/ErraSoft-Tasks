@@ -49,10 +49,21 @@ $arr = [
     ],
     [
         "name" => "Richest_Customer_Wealth",
-        "git" => "",
+        "git" => "https://github.com/MOHAMED52001/ErraSoft-Tasks/blob/master/Tasks/Richest_Customer_Wealth.php",
         "dis" => "find the maximum sum in a row"
+    ],
+    [
+        "name" => "ReverseEachWord_inString",
+        "git" => "",
+        "dis" => "reverse each word in a string in its place"
+    ],
+    [
+        "name" => "MaxElement_inArray",
+        "git" => "",
+        "dis" => "find the maximum element in array"
     ]
-]
+
+    ];
 
 
 
