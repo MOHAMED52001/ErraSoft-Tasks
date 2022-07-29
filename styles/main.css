@@ -55,6 +55,8 @@ a{
     text-align: center;
     text-decoration: none;
     padding: .3rem 1rem;
+    color: gainsboro;
+
     
     
 }
@@ -91,6 +93,8 @@ header{
 .btn:hover{
     transform: scale(.99);
     background: rgb(48, 47, 47);
+    color: gainsboro;
+
 }
 
 .btn-red{
@@ -102,7 +106,7 @@ header{
 
 .h1-name{
     text-align: center;
-    margin:1rem auto;
+    margin:2rem auto;
     font-weight: lighter;
     font-size: 1.6rem;
 
