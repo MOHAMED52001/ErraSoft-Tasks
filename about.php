@@ -1,16 +1,14 @@
-<?php
+<?php 
 
     session_start();
-    if (!empty($_SESSION['err'])) {
-        $err = $_SESSION['err'];
-    }
-
     if (!empty($_SESSION['ifLogged'])) {
         $logged = $_SESSION['ifLogged'];
     }
 
 
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -31,27 +29,5 @@
             </ul>
         </nav>
     </header> 
-    <?php 
-         if (!empty($err)) {
-            foreach($err as $value){
-                echo "<p style='color:red'>${value}</p>";
-         }
-        }
-    ?>
-    <section id="login-form">
-    <form action="login.php" method="post">
-       <div class="container">
-       <div>
-            <label for="Email">Email: </label>
-            <input type="text" name="email" id="Email">
-        </div>
-        <div>
-            <label for="Password">Password: </label>
-            <input type="password" name="pass" id="Password">
-        </div>
-        <input type="submit" name="submit" class="btn">
-       </div>
-    </form>
-    </section>
 </body>
 </html>

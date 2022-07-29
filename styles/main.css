@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.3;
+    height: 100vh;
+    overflow: hidden;
+}
+form{
+    margin: 35vh auto;
+    padding: 1rem;
+    text-align: center;
+    height: 100vh;
+}
+label{
+    display: block;
+    text-align: left;
+}
+span{
+    color: rgb(11, 130, 146);
+}
+input {
+    margin-bottom: 1rem;
+    padding: .2rem;
+    width: 100%;
+}
+ul{
+    list-style: none;
+    
+}
+li{
+    display: inline-block;
+    padding: 1rem;
+    
+
+}
+p{
+    position: relative;
+    top: 100px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 1.2rem;
+    padding: .5rem;
+}
+ul li a{
+    text-align: center;
+    padding: .5rem 1.4rem;
+    
+}
+a{
+    text-align: center;
+    text-decoration: none;
+    padding: .3rem 1rem;
+    
+    
+}
+a:visited{
+    color: gainsboro;
+}
+header{
+    background-color: #444;
+
+}
+#nav-bar{
+    margin-left: .5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    
+}
+.container{
+    width: 50%;
+    margin: 0 auto;
+}
+.btn{
+    color: gainsboro;
+    border-radius: 10px;
+    background: rgb(88, 86, 86);
+    margin-top: 1rem;
+    transition: all .3s ease-in-out;
+}
+.btn:hover{
+    transform: scale(.99);
+    background: rgb(48, 47, 47);
+}
+
+.btn-red{
+    background-color: red;
+}
+.btn-red:hover{
+    background-color: rgb(108, 4, 4);
+}
