@@ -65,6 +65,7 @@ header{
     background-color: #444;
 
 }
+
 .contain{
     margin: 1rem 1rem;
 }
@@ -97,4 +98,12 @@ header{
 }
 .btn-red:hover{
     background-color: rgb(108, 4, 4);
+}
+
+.h1-name{
+    text-align: center;
+    margin:1rem auto;
+    font-weight: lighter;
+    font-size: 1.6rem;
+
 }

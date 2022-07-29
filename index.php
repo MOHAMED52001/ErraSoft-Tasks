@@ -26,6 +26,8 @@
             <h1 class="logo">Erra<span>Soft</span></h1>
             <ul>
                 <li><a href="<?= $logged ?? null ?>" class="btn">Home</a></li>
+                <li><a href="Tasks.php" class="btn">Tasks</a></li>
+
                 <li><a href="about.php" class="btn">About</a></li>
                 <li><a href="index.php" class="btn">login</a></li>
             </ul>
