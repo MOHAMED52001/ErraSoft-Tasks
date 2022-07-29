@@ -29,5 +29,21 @@
             </ul>
         </nav>
     </header> 
+
+    <section id="about">
+        <div class="contain">
+            <h1>About Me :</h1>
+            <br>
+            <ul>
+                <li><h4>Name : Mohamed Atef</h4></li><br>
+                <li><h4>Reason for creating this website ?</h4><ul>
+                    <li>I Have Creted This Small Project To Practice My Code And To Keep Track Of My Tasks.</li>
+                </ul><li>
+                    
+                </li></li>
+            </ul>
+            <p>You can use this website to keep track of your tasks too, you have to do some small changes in the code.</p>
+        </div>
+    </section>
 </body>
 </html>

@@ -32,9 +32,9 @@ ul{
     list-style: none;
     
 }
-li{
+#nav-bar ul li{
     display: inline-block;
-    padding: 1rem;
+    padding:  1rem;
     
 
 }
@@ -64,6 +64,9 @@ a:visited{
 header{
     background-color: #444;
 
+}
+.contain{
+    margin: 1rem 1rem;
 }
 #nav-bar{
     margin-left: .5rem;
