@@ -10,20 +10,55 @@ if (!$email) {
     header("location: index.php");
 }
 
-$directory = "./uploads";
+$directory = "./Tasks";
 
 if (!is_dir($directory)) {
     exit('Invalid diretory path');
 }
 
-$files = array();
+$files = [];
 foreach (scandir($directory) as $file) {
     if ($file !== '.' && $file !== '..') {
-        $file = explode('.',$file);
-        $file = $file[0];
         $files[] = $file;
     }
 }
+
+$file_data = [];
+foreach ($files as $value) {
+    $content = [];
+    $handle = fopen("./Tasks/${value}", "r");
+    if ($handle) {
+        while (($line = fgets($handle)) !== false) {
+            $content[] = $line;
+        }
+        fclose($handle);
+    }
+    $file_data[$value]['content'] = $content;
+}
+
+$arr = [
+    [
+        "name" => "Algo",
+        "git" => "https://github.com/MOHAMED52001/ErraSoft-Tasks/blob/master/Tasks/Algo.txt",
+        "dis" => "this a list for the most common algorithms in 21 cen"
+    ],
+    [
+        "name" => "Count_Every_Word",
+        "git" => "https://github.com/MOHAMED52001/ErraSoft-Tasks/blob/master/Tasks/CountEveryWord.php",
+        "dis" => "count a given word how many times it reapeted in the string"
+    ],
+    [
+        "name" => "Richest_Customer_Wealth",
+        "git" => "",
+        "dis" => "find the maximum sum in a row"
+    ]
+]
+
+
+
+
+
+
 
 ?>
 
@@ -53,36 +88,69 @@ foreach (scandir($directory) as $file) {
         </nav>
     </header>
     <div>
-        <h1 class="h1-name"><?= "Welcome, ", $email ?></h1>
+        <h1 class="h1-name" style="font-size:2rem"><?= "Welcome, ", $email ?></h1>
+        <a href="https://github.com/MOHAMED52001/ErraSoft-Tasks.git" target="_blank" style="color:black; font-size:1.6rem">This My Git Repository For This Project And My Solution For Each Task</a>
     </div>
 
     <div class="wrapper center-block">
         <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
 
             <?php
-
-            foreach ($files  as $key => $value) {
-                echo "
-                        <div class='panel panel-default'>
-                        <div class='panel-heading active' role='tab' id='headingOne'>
-                            <h4 class='panel-title'>
-                                <a role='button' data-toggle='collapse' data-parent='#accordion' href='#$key' aria-expanded='true' aria-controls='collapseOne'>
-                                    $value
-                                </a>
-                            </h4>
-                        </div>
-                        <div id='$key' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading1'>
-                            <div class='panel-body'>
-                                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-                            </div>
-                        </div>
+                   foreach ($arr as $key => $value) {
+                    echo "
+                    <div class='panel panel-default'>
+                    <div class='panel-heading active' role='tab' id='headingOne'>
+                        <h4 class='panel-title'>
+                            <a role='button' data-toggle='collapse' data-parent='#accordion' href='#$value[name]' aria-expanded='true' aria-controls='collapseOne'>
+                                $value[name]
+                            </a>
+                        </h4>
                     </div>
-                        
-                        ";
-            }
+                    <div id='$value[name]' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading1'>
+                    <div class='panel-body'>
+                    <ul>
+                        <li> $value[dis] <br><br></li>
+                        <li><a style='color:black' href='$value[git]' target='_blank'> $value[git]</a></li>
+                    </ul>
+                    </div>
+                </div>
+                 
+                </div>
 
+                    ";
+                   }
+                
             ?>
+            <?php
 
+            // foreach ($file_data  as $key => $value) {
+            //     $key = explode("." ,$key);
+            //     $key = $key[0];
+            //     echo "
+            //    <div class='panel panel-default'>
+            //    <div class='panel-heading active' role='tab' id='headingOne'>
+            //        <h4 class='panel-title'>
+            //            <a role='button' data-toggle='collapse' data-parent='#accordion' href='#$key' aria-expanded='true' aria-controls='collapseOne'>
+            //                $key
+            //            </a>
+            //        </h4>
+            //    </div>
+            //    ";
+            //     foreach ($value as $content) {
+            //         foreach ($content as  $item) {
+            //             echo "
+            //             <div id='$key' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading1'>
+            //                 <div class='panel-body'>
+            //                     $item
+            //                 </div>
+            //             </div>
+            //         </div>
+
+            //     ";
+            //     }
+            //     }
+            // }
+            ?>
 
         </div>
     </div>
